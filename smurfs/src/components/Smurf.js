@@ -6,10 +6,10 @@ console.log('SMURF', props)
     return (
         <div>
             Smurf
-            <p>Name: {props.smurfs.name}</p>
-            <p>age: {props.smurfs.age}</p>
-            <p>height: {props.smurfs.height}</p>
-            <p>id: {props.smurfs.id}</p>
+            <p>Name: {props.smurf.name}</p>
+            <p>age: {props.smurf.age}</p>
+            <p>height: {props.smurf.height}</p>
+            <p>id: {props.smurf.id}</p>
         </div>
     )
 }

@@ -5,14 +5,14 @@ import { Smurf } from './Smurf'
 
 
 export function SmurfList(props) {
-    console.log('PROPS', props)
 
     return (
         //map over something here.
         <div>
             SmurfList
             {props.smurfs.map((smurf) => {
-               return <Smurf key={smurf.id} smurfs={props.smurfs}/>
+                console.log('MAP', smurf)
+               return <Smurf key={smurf.id} smurf={smurf}/>
             })}
             
         </div>

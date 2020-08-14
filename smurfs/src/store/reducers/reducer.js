@@ -1,4 +1,4 @@
-import { FETCH_SMURF } from '../actions/actions'
+import { FETCH_SMURF, SUBMIT_SMURF } from '../actions/actions'
 
 const initialState = {
     smurfs: []
@@ -8,6 +8,12 @@ export const reducer = (state = initialState, action) => {
 
     switch (action.type) {
         case FETCH_SMURF:
+            return {
+                ...state,
+                smurfs: action.payload
+            }
+
+        case SUBMIT_SMURF:
             return {
                 ...state,
                 smurfs: action.payload
