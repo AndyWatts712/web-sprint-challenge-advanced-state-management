@@ -1,16 +1,25 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
+import { SmurfList } from './SmurfList'
+import { fetchSmurf } from '../store/actions/actions'
+
 import "./App.css";
-class App extends Component {
-  render() {
+
+
+export function App() {
+fetchSmurf()
+  // useEffect(()=> {
+  //   fetchSmurf()
+  // }, [])
+
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        <div>
+          <SmurfList />
+        </div>
       </div>
     );
-  }
+  
 }
 
 export default App;
