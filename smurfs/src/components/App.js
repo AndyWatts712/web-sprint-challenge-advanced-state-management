@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux"
 import { SmurfList } from './SmurfList'
-import { SmurfForm } from './SmurfForm'
+import  SmurfForm  from './SmurfForm'
 import { fetchSmurf } from '../store/actions/actions'
 
 import "./App.css";

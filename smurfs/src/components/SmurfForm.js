@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from "react-redux"
 import { postSmurf } from '../store/actions/actions'
 
-export function SmurfForm(props) {
+function SmurfForm(props) {
     console.log('Form PROPS', props)
     const [form, setForm] = useState({
         name: '',
