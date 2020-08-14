@@ -1,25 +1,33 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux"
 import { SmurfList } from './SmurfList'
 import { fetchSmurf } from '../store/actions/actions'
 
 import "./App.css";
 
 
-export function App() {
-fetchSmurf()
-  // useEffect(()=> {
-  //   fetchSmurf()
-  // }, [])
+export function App(props) {
+  console.log('APP PROPS', props)
+  useEffect(()=> {
+      props.fetchSmurf()
+    }, [])
+    
 
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>
         <div>
-          <SmurfList />
+          <SmurfList smurfs={props.smurfs}/>
         </div>
       </div>
     );
   
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    smurfs: state.smurfs
+  };
+};
+
+export default connect(mapStateToProps, { fetchSmurf })(App);

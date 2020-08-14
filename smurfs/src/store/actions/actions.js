@@ -12,10 +12,3 @@ export const fetchSmurf = () => (dispatch) =>{
         .catch((err) => console.log(err))
 }
 
-const thunk = (store) => (next) => (action) => {
-    if (typeof action === "object") {
-      next(action);
-    } else if (typeof action === "function") {
-      action(store.dispatch);
-    }
-  };

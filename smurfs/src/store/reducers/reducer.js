@@ -1,21 +1,18 @@
 import { FETCH_SMURF } from '../actions/actions'
 
 const initialState = {
-    name: '',
-    age: 0,
-    height: '',
-    id: 0
+    smurfs: []
 }
-export const reducer = (state=initialState, action) => {
-    switch(action.type) {
+export const reducer = (state = initialState, action) => {
+    console.log('ACTION', action.payload)
+
+    switch (action.type) {
         case FETCH_SMURF:
             return {
                 ...state,
-                name: action.payload.name,
-                age: action.payload.age,
-                height: action.payload.height,
-                id: action.payload.id
+                smurfs: action.payload
             }
+
         default:
             return state
     }
