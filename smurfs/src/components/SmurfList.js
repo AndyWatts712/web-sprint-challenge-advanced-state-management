@@ -4,20 +4,21 @@ import { Smurf } from './Smurf'
 
 
 export function SmurfList(props) {
-
-    return(
+    console.log('PROPS', props)
+    
+    return (
         <div>
             <h2>Smurf Village</h2>
             {props.smurf.map((item) => {
-                <Smurf />
+                return <Smurf key={item.id} />
             })}
-            
+
         </div>
     )
 }
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
-    smurf: state.smurf
+        smurf: state.smurf
     }
 }
 export default connect(mapStateToProps, {})(SmurfList)

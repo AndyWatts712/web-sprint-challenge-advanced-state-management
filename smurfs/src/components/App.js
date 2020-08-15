@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 
 function App(props) {
+  console.log('APP PROPS', props)
   useEffect(() => {
     props.fetchSmurf()
   }, [])
@@ -13,10 +14,14 @@ function App(props) {
   return (
     <div className="App">
       <h1>SMURFS! W/Redux</h1>
-      <SmurfList />
+      <SmurfList smurf={props.smurf}/>
     </div>
   );
 
 }
-
-export default connect(null, { fetchSmurf })(App)
+const mapStateToProps = (state) => {
+  return {
+    smurf: state.smurf
+  }
+}
+export default connect(mapStateToProps, { fetchSmurf })(App)
